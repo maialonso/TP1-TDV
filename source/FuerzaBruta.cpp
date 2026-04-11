@@ -48,9 +48,6 @@ std::vector<int> encontrarSeamFuerzaBruta(const std::vector<std::vector<double>>
         S.push_back(j);
         encontrarSeamFuerzaBrutaRec(energia, 1, j, n, m, S, B, energia[0][j], mejorEnergia);
     }
-
-    for (int i = 0; i < B.size(); i++) {
-        B[i] += 1;                  // pasa de base 0 a base 1 (formato de salida)
-    }
+    
     return B;
 }
