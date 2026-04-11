@@ -70,7 +70,7 @@ std::vector<int> reconstruccion(const std::vector<std::vector<double>>& energia,
     int i= energia.size()-1;        // empieza en la última fila
     int j= colInicio;               // columna con menor energía acumulada
     std::vector<int> respuesta; 
-    respuesta.push_back({i,colInicio});     //obs: el vector queda invertido
+    respuesta.push_back(colInicio);     //obs: el vector queda invertido
     i--;
     while(i >= 0){
         int posAnterior= memo[i][j].first;  // valor de la pos del elemento anterior
