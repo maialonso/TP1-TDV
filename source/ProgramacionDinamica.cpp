@@ -67,12 +67,11 @@ std::vector<int> invertirPairs(std::vector<int> aInvertir){
 
 // función que arma un vector del camino de la costura óptima
 std::vector<int> reconstruccion(const std::vector<std::vector<double>>& energia, std::vector<std::vector<std::pair<int, double>>> &memo, int colInicio){
-    int i= energia.size()-1;        // empieza en la última fila
     int j= colInicio;               // columna con menor energía acumulada
     std::vector<int> respuesta; 
-    respuesta.push_back(colInicio);     //obs: el vector queda invertido
-    i--;
-    while(i >= 0){
+    respuesta.push_back(colInicio);
+    for (int i = energia.size()-1; i>=0; i--){      // empieza en la última fila
+    while(i > 0){
         int posAnterior= memo[i][j].first;  // valor de la pos del elemento anterior
         respuesta.push_back(posAnterior);
         j = posAnterior;                    // actualiza la columna en donde estoy
