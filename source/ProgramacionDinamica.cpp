@@ -71,7 +71,6 @@ std::vector<int> reconstruccion(const std::vector<std::vector<double>>& energia,
     std::vector<int> respuesta; 
     respuesta.push_back(colInicio);
     for (int i = energia.size()-1; i>=0; i--){      // empieza en la última fila
-    while(i > 0){
         int posAnterior= memo[i][j].first;  // valor de la pos del elemento anterior
         respuesta.push_back(posAnterior);
         j = posAnterior;                    // actualiza la columna en donde estoy
@@ -81,6 +80,7 @@ std::vector<int> reconstruccion(const std::vector<std::vector<double>>& energia,
     std::vector<int> res= invertirPairs(respuesta);         // llamado a la función que invierte la solución 
     return res;
 }
+
 
 
 // función principal
