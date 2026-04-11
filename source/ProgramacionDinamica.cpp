@@ -10,7 +10,7 @@ std::pair<int, double> encontrarSeamPDRec(const std::vector<std::vector<double>>
     }
 
     if(i==0){                           // caso base: está en la primera fila 
-        std::pair<int, double > res = {-1, energia[i][j]};
+        std::pair<int, double > res = {j, energia[i][j]};
         memo[i][j]= res;
         return res;
     }
