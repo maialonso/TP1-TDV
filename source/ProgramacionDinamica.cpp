@@ -10,12 +10,14 @@ std::pair<int, double> encontrarSeamPDRec(const std::vector<std::vector<double>>
     }
 
     if(i==0){                           // caso base: está en la primera fila 
-        std::pair<int, double > res = {j, energia[i][j]};
+        std::pair<int, double > res = {j, energia[i][j]};//dejamos como invariante que los casos base se tienen a si mismos
         memo[i][j]= res;
         return res;
     }
     
+    //definimos un min para comparaciones
     std::pair<int, double> min = {-1, std::numeric_limits<double>::infinity()};
+    //definimos un mejor donde guardamos la posicion del mejor
     int mejor;
 
     if(j > 0 && j < m-1){                       // si no está en un borde 
@@ -48,10 +50,10 @@ std::pair<int, double> encontrarSeamPDRec(const std::vector<std::vector<double>>
         }
     }
 
-        min.first = mejor;              // guarda la posición del elemento de donde vino
-        min.second += energia[i][j];    // suma la energia acumulada hasta ahí
-        memo[i][j] = min;                // actualiza memo
-        return memo[i][j];
+    min.first = mejor;              // guarda la posición del elemento de donde vino
+    min.second += energia[i][j];    // suma la energia acumulada hasta ahí
+    memo[i][j] = min;                // actualiza memo
+    return memo[i][j];
 }
 
 
@@ -70,11 +72,10 @@ std::vector<int> reconstruccion(const std::vector<std::vector<double>>& energia,
     int j= colInicio;               // columna con menor energía acumulada
     std::vector<int> respuesta; 
     respuesta.push_back(colInicio);
-    for (int i = energia.size()-1; i>=0; i--){      // empieza en la última fila
+    for (int i = energia.size()-1; i>0; i--){      // empieza en la última fila
         int posAnterior= memo[i][j].first;  // valor de la pos del elemento anterior
         respuesta.push_back(posAnterior);
         j = posAnterior;                    // actualiza la columna en donde estoy
-        i--;
     }
 
     std::vector<int> res= invertirPairs(respuesta);         // llamado a la función que invierte la solución 
