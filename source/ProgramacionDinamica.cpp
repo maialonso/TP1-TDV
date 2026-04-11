@@ -85,7 +85,7 @@ std::vector<int> reconstruccion(const std::vector<std::vector<double>>& energia,
 
 
 // función principal
-std::vector<int> encontrarSeamPDNueva(const std::vector<std::vector<double>>& energia) {
+std::vector<int> encontrarSeamPD(const std::vector<std::vector<double>>& energia) {
     if (energia.empty() || energia[0].empty()) {
         return {};
     }
