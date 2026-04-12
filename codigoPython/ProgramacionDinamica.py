@@ -44,7 +44,7 @@ def encontrarSeamPDRec(energia: list[list[float]], i: int, j: int, n: int, m: in
 
 
 # funcion para invertir la solución dado que en la reconstrucción queda como primer posición el último elemento del camino
-def invertirPairs(aInvertir: list[int]) -> list[int]:
+def invertir(aInvertir: list[int]) -> list[int]:
     res = []
     for i in range(len(aInvertir) - 1, -1, -1):    # devuelve el vector en orden (primer elemento el primer elemento del camino)
         res.append(aInvertir[i])
@@ -61,7 +61,7 @@ def reconstruccion(energia: list[list[float]], memo: list[list[list]], colInicio
         respuesta.append(posAnterior)
         j = posAnterior                 # actualiza la columna en donde estoy
 
-    res = invertirPairs(respuesta)      # llamado a la función que invierte la solución
+    res = invertir(respuesta)      # llamado a la función que invierte la solución
     return res
 
 

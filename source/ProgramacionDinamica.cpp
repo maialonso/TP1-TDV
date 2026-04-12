@@ -58,7 +58,7 @@ std::pair<int, double> encontrarSeamPDRec(const std::vector<std::vector<double>>
 
 
 // funcion para invertir la solución dado que en la reconstrucción queda como primer posición el último elemento del camino
-std::vector<int> invertirPairs(std::vector<int> aInvertir){
+std::vector<int> invertir(std::vector<int> aInvertir){
     std::vector<int> res;
     for(int i=aInvertir.size()-1; i>=0; i--){       //devuelve el vector en orden (primer elemento el primer elemento del camino)
         res.push_back(aInvertir[i]);
@@ -78,7 +78,7 @@ std::vector<int> reconstruccion(const std::vector<std::vector<double>>& energia,
         j = posAnterior;                    // actualiza la columna en donde estoy
     }
 
-    std::vector<int> res= invertirPairs(respuesta);         // llamado a la función que invierte la solución 
+    std::vector<int> res= invertir(respuesta);         // llamado a la función que invierte la solución 
     return res;
 }
 
