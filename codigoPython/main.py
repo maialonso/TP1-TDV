@@ -6,7 +6,7 @@ import sys
 from FuerzaBruta import encontrarSeamFuerzaBruta
 from Backtracking import encontrarSeamBacktracking
 from ProgramacionDinamica import encontrarSeamPD
-from Imagen import Imagen
+from imagen import Imagen
 
 # Lee una matriz de energía desde un archivo de texto.
 # Formato esperado:
