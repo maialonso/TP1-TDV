@@ -1,5 +1,5 @@
-#Cambios necesarios:
-#stb_image es una librería C de carga/escritura de imágenes, la reemplacé por Pillow (PIL) que es su equivalente directo en Python
+# cambios:
+# stb_image es una librería C de carga/escritura de imágenes, la reemplacé por Pillow (PIL) que es su equivalente directo en Python.
 
 
 from PIL import Image as PILImage

@@ -1,7 +1,7 @@
-#Cambios necesarios:
-#El único cambio estructural necesario: mejorEnergia en C++ es double& (referencia modificable). 
-#En Python los floats son inmutables, así que lo envolví en una lista de un elemento (mejorEnergia[0]) para replicar exactamente ese comportamiento.
-#La lógica es idéntica.
+# cambios:
+# el único cambio estructural necesario: mejorEnergia en C++ es double& (referencia modificable)
+# en Python los floats son inmutables, así que lo envolví en una lista de un elemento (mejorEnergia[0]) para replicar exactamente ese comportamiento
+# la lógica es idéntica
 
 
 

@@ -1,5 +1,5 @@
-#Cambios necesarios:
-#el for de parseo de argumentos de C++ usa i++ dentro del loop, lo reemplacé por un while con i += 1
+# cambios:
+# el for de parseo de argumentos de C++ usa i++ dentro del loop, lo reemplacé por un while con i += 1
 
 
 import sys

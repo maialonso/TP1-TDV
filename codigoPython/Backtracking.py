@@ -1,5 +1,5 @@
-#Cambios necesarios:
-#El único cambio estructural: std::pair<std::vector<int>, double> no existe en Python, así que lo reemplacé por una lista de dos elementos [lista, float]
+# cambios:
+# el único cambio estructural: std::pair<std::vector<int>, double> no existe en Python, así que lo reemplacé por una lista de dos elementos [lista, float]
 
 
 

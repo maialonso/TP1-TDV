@@ -1,4 +1,4 @@
-#Cambios necesarios
+# cambios:
 # std::pair<int, double> lo reemplacé por una lista de dos elementos [int, float]
 
 # función recursiva
