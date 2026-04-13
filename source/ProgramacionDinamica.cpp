@@ -14,6 +14,13 @@ std::pair<int, double> encontrarSeamPDRec(const std::vector<std::vector<double>>
         memo[i][j]= res;
         return res;
     }
+
+    if (m == 1) {
+        std::pair<int, double> aux = encontrarSeamPDRec(energia, i-1, 0, n, m, memo);
+        memo[i][j].first = 0;
+        memo[i][j].second = aux.second + energia[i][j];
+        return memo[i][j];
+    }
     
     //definimos un min para comparaciones
     std::pair<int, double> min = {-1, std::numeric_limits<double>::infinity()};
@@ -40,7 +47,7 @@ std::pair<int, double> encontrarSeamPDRec(const std::vector<std::vector<double>>
         }  
     }
 
-    else{                                      // si está en la última columna a la derecha
+    else if (j==m-1){                                      // si está en la última columna a la derecha
         for(int k=j-1; k <= j; k++){           // recursión por {j-1, j}
             std::pair<int, double> aux = encontrarSeamPDRec(energia, i-1, k, n , m, memo); 
             if(min.second>aux.second){
@@ -67,7 +74,7 @@ std::vector<int> invertir(std::vector<int> aInvertir){
 }
 
 
-// función que arma un vector del camino de la costura óptima
+// reconstrucción del camino de la costura óptima
 std::vector<int> reconstruccion(const std::vector<std::vector<double>>& energia, std::vector<std::vector<std::pair<int, double>>> &memo, int colInicio){
     int j= colInicio;               // columna con menor energía acumulada
     std::vector<int> respuesta; 
@@ -108,6 +115,6 @@ std::vector<int> encontrarSeamPD(const std::vector<std::vector<double>>& energia
         }
     }
 
-    std::vector<int> posColumna= reconstruccion(energia, memo, pos);        // reconstruye camino de la costura
-    return posColumna;
+    std::vector<int> res= reconstruccion(energia, memo, pos);        // reconstruye camino de la costura
+    return res;
 }

@@ -63,10 +63,9 @@ def modoNumerico(rutaEntrada: str, algoritmo: str) -> None:
     imprimirMatriz(energia)
     print()
 
-    seam = ejecutarAlgoritmo(energia, algoritmo)
     imprimirSeam(seam, energia)
 
-    rutaSalida = "output/numericos/seam_" + algoritmo + ".txt"
+    rutaSalida = "../output/numericos/seam_" + algoritmo + ".txt"
     with open(rutaSalida, 'w') as salida:
         if salida:
             for f in range(len(seam)):
@@ -85,18 +84,18 @@ def modoImagen(rutaImagen: str, algoritmo: str, iteraciones: int) -> None:
         if (i + 1) % 10 == 0 or i == iteraciones - 1:
             print(f"Iteración {i + 1}/{iteraciones} - Ancho actual: {img.ancho()} px")
 
-    rutaSalida = "output/imagenes/resultado_" + algoritmo + ".png"
+    rutaSalida = "../output/imagenes/resultado_" + algoritmo + ".png"
     img.guardar(rutaSalida)
     print("Imagen guardada en " + rutaSalida)
 
 
 def imprimirUso() -> None:
     print("Uso:\n"
-          "  Modo numérico: python seam.py --numerico <archivo> --algoritmo <fb|bt|pd>\n"
-          "  Modo imagen:   python seam.py --imagen <archivo> --algoritmo <fb|bt|pd> --iteraciones <N>\n"
+          "  Modo numérico: python main.py --numerico <archivo> --algoritmo <fb|bt|pd>\n"
+          "  Modo imagen:   python main.py --imagen <archivo> --algoritmo <fb|bt|pd> --iteraciones <N>\n"
           "\nEjemplos:\n"
-          "  python seam.py --numerico input/ejemplo.txt --algoritmo pd\n"
-          "  python seam.py --imagen img/foto.jpg --algoritmo pd --iteraciones 50\n")
+          "  python main.py --numerico ../input/ejemplo.txt --algoritmo pd\n"
+          "  python main.py --imagen ../input/foto.jpg --algoritmo pd --iteraciones 50\n")
 
 
 def main() -> int:
